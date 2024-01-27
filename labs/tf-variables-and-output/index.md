@@ -1,18 +1,18 @@
 # Terraform Lab 2
 
 ## Overview 
-In this lab you will update the existing `main.tf` file to use variables. 
+In this lab, you will update the existing `main.tf` file to use variables. 
 
-**NOTE: If you run out of disk space remove the `.terraform` directory from previous labs**
+**NOTE: If you run out of disk space, remove the `.terraform` directory from previous labs**
 
 ## Set the instance name with a variable
-Under our working directory create a `tf-lab2` directory and copy `main.tf` to our new directory: 
+Under our working directory, create a `tf-lab2` directory and copy `main.tf` to our new directory: 
 ```sh
 mkdir tf-lab2 
 cd $_
 cp ../tf-lab1/main.tf . 
 ```
-The configuration in `main.tf` includes hard-coded values. Terraform variables allow you to write configuration that is easier to re-use and flexible. 
+The configuration in `main.tf` includes hard-coded values. Terraform variables allow you to write configurations that are easier to reuse and flexible. 
 
 Add a variable to define the instance name. 
 
@@ -42,7 +42,7 @@ resource "aws_instance" "lab2-tf-example" {
   ..snip
 }
 ```
-After updating the resource block to use the new variable apply the configuration 
+After updating the resource block to use the new variable, apply the configuration 
 
 ```sh
 terraform apply
@@ -50,15 +50,15 @@ terraform apply
 
 If everything looks good, respond with `yes` to the prompt.
 
-Now apply the configuration again, but pass the variable on the command-line. 
+Now apply the configuration again, but pass the variable on the command line. 
 ```sh
 terraform apply -var 'instance_name=SomeOtherName'
 ```
 
-Variables passed via the command-line will not be saved , so you need to repeatedly set them, or add them to a variables file.
+Variables passed via the command line will not be saved , so you need to repeatedly set them or add them to a variables file.
 
-## Query Data with Outputs
-In this lab you will use output values to organize data to be queried and shown back to the user. 
+## Output values
+Use output values to organize data to be queried and returned to the user. 
 
 Create a file called `outputs.tf` to output the instance's ID and Public IP address with the following: 
 ```hcl

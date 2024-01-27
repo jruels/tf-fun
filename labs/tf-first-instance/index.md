@@ -21,8 +21,17 @@ Confirm installation was successful
 terraform version 
 ```
 
+Remove the zip file 
+
+```bash
+rm -rf *.zip
+```
+
+
+
 ## Create Terraform configuration
-Create a directory for the lab 1 files:
+
+In the working directory, create a directory for the lab 1 files:
 ```sh
 mkdir tf-lab1
 cd $_
@@ -40,11 +49,11 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region  = "us-west-1"
 }
 
 resource "aws_instance" "lab1-tf-example" {
-  ami           = "ami-830c94e3"
+  ami           = "ami-06e4ca05d431835e9"
   instance_type = "t2.micro"
 
   tags = {
@@ -120,7 +129,7 @@ You should see output like:
             └── aws
                 └── 3.34.0
                     └── linux_amd64
-                        └── terraform-provider-aws_v3.34.0_x5
+                        └── terraform-provider-aws_v5.34.0_x5
 ```
 
 As you can see above Terraform download the aws provider from the official Hashicorp registry. 

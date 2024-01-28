@@ -53,13 +53,13 @@ Add a block declaring the `aws_region` variable to `variables.tf`
 variable "aws_region" {
   description = "AWS region"
   type        = string
-  default     = "us-west-2"
+  default     = "us-west-1"
 }
 ```
 
 Our variable block has three optional arguments. 
 
-- Description: A short description to document the variables purpose 
+- Description: A short description to document the variable's purpose 
 - Type: The type of data contained in the variable.
 - Default: The default value of the variable.
 
@@ -70,7 +70,7 @@ If you do not set a default value, you must assign a value before Terraform can 
 Terraform does not support unassigned variables. You will see some of the ways to assign values to variables later in this lab.
 
 ## Doing things on your own
-The rest of this lab uses principles taught previously, and will not provide step-by-step instructions. Please work to solve the lab yourself, but if you get stuck reach out to the instructor.
+The rest of this lab uses principles taught previously and will not provide step-by-step instructions. Please work to solve the lab yourself, but if you get stuck, reach out to the instructor.
 
 You can refer to variables in your configuration with `var.<variable_name>`.
 
@@ -80,11 +80,11 @@ Add a declaration for the `vpc_cidr_block` variable to `variables.tf` with the f
 - variable name: `vpc_cidr_block`
 - description: `CIDR block for VPC`
 - type: `string`
-- default: `10.0.0.0/16`
+- default: `"10.0.0.0/16"`
 
 Now, replace the hard-coded value for the VPC's CIDR block with a variable in `main.tf`.
 
-Apply the updated configuration. The default values of these variables are the same as the hard-coded values they replaced so no changes will be made.
+Apply the updated configuration. The default values of these variables are the same as the hard-coded values they replaced; no changes will be made.
 
 ## Create multiple instances 
 Use a `number` type to define how many instances are supported by this configuration. 
@@ -97,10 +97,10 @@ Add a variable block to `variables.tf` with the following:
 
 Update the EC2 instances resource to use the `instance_count` variable in `main.tf`
 
-Now Terraform will convert the values into the correct type. The `instance_count` variable would also work using a string ( "2" ) instead of number ( 2 ). 
+Now Terraform will convert the values into the correct type. The `instance_count` variable would also work using a string ( "2" ) instead of a number ( 2 ). 
 
 
-Once again the variables added have the same values as the original hard-coded values. Run `terraform apply` and you'll see it does not need to make any changes.
+Once again, the variables added have the same values as the original hard-coded values. Run `terraform apply` and you'll see it does not need to make any changes.
 
 # Cleanup
 Destroy the infrastructure you created

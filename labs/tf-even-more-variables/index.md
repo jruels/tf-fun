@@ -85,6 +85,14 @@ Use the `slice()` function to get a subset of these lists.
 
 The Terraform console command opens an interactive console that you can use to evaluate expressions in the context of your configuration. This can be very useful when working with and troubleshooting variable definitions.
 
+Initialize the directory
+
+```
+terraform init
+```
+
+
+
 Open a console with the `terraform console` command.
 
 ```sh
@@ -343,4 +351,10 @@ terraform apply -var='resource_tags={project="my-project",environment="developme
 Run the following to clean up the resources 
 ```bash
 terraform destroy -auto-approve
+```
+
+Remove the `.terraform` directory to free up disk space
+
+```shell
+rm -rf .terraform
 ```

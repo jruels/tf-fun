@@ -25,8 +25,8 @@ When creating the backend configuration remember to replace the `bucket` with th
 
 Create `backend.tf` declaring:
 - `s3` backend
-- region = `us-west-2`
-- bucket = `remote-state-jrs`
+- region = `us-west-1`
+- bucket = `<your bucket name>`
 - key = `state.tfstate`
 
 
@@ -35,7 +35,24 @@ Now that you have created the S3 bucket and configured the `backend.tf` you must
 
 If prompted to migrate the existing state type `yes`
 
-If everything is successful you should see a message telling you the backend was migrated. 
+If everything is successful, you should see a message that the backend was migrated. 
 
-# Congrats!
+## Cleanup
 
+Run the following to clean up the resources
+
+```
+terraform destroy -auto-approve
+```
+
+Remove the `.terraform` directory to free up disk space
+
+```
+rm -rf .terraform
+```
+
+
+
+## Congratulations
+
+You have successfully created an S3 bucket and migrated to a remote backend state.

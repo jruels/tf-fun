@@ -161,7 +161,7 @@ The output has a + next to `aws_instance.lab1-tf-example`, meaning that Terrafor
 
 Terraform will now pause and wait for your approval before proceeding. If anything in the plan seems incorrect or dangerous, it is safe to abort here with no changes made to your infrastructure.
 
-In this case the plan is acceptable, so type `yes` at the confirmation prompt to proceed. Executing the plan will take a few minutes since Terraform waits for the EC2 instance to become available.
+In this case, the plan is acceptable, so type `yes` at the confirmation prompt to proceed. Executing the plan will take a few minutes since Terraform waits for the EC2 instance to become available.
 
 
 
@@ -170,6 +170,12 @@ In this case the plan is acceptable, so type `yes` at the confirmation prompt to
 Destroy the infrastructure you created 
 ```sh
 terraform destroy -auto-approve
+```
+
+Remove the `.terraform` directory to free up disk space
+
+```shell
+rm -rf .terraform
 ```
 
 # Congrats! 

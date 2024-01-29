@@ -108,4 +108,10 @@ Destroy the infrastructure you created
 terraform destroy -auto-approve
 ```
 
+Remove the `.terraform` directory to free up disk space
+
+```
+rm -rf .terraform
+```
+
 # Congrats!

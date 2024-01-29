@@ -5,8 +5,6 @@ In this lab, you will log into the AWS Console and start a CloudShell session. W
 ### Log into the AWS Cloud Console
 To log into the console, use the details in the instructor-provided spreadsheet. 
 
-Once you have logged in, select **AWS Account (1)** -> **Account (number)** -> **Management console**
-
 On the top right side, select the **US West (N. California)** `us-west-1` region. 
 
 ![region](images/region.png)

@@ -14,10 +14,22 @@ Add a `local-exec` provisioner with the following attributes:
 Add another `local-exec` provisioner with the following attributes: 
 - command: Echo the private IP addresses into a file named `private_ips.txt`
 
-# Cleanup
-Destroy the infrastructure you created
-```sh
+
+
+## Cleanup
+
+Run the following to clean up the resources
+
+```
 terraform destroy -auto-approve
 ```
 
-# Congrats! 
+Remove the `.terraform` directory to free up disk space
+
+```
+rm -rf .terraform
+```
+
+
+
+## Congratulations
